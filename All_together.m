@@ -1,27 +1,24 @@
 
 clear;
 close all ; 
-% Load data 
 
+% load data measured at 10Hz (for the accelerometer)
 
+% Route 1 
+load('MobileSensorData//sensorlog_20241210_103145.mat');
 
-% load('MobileSensorData//sensorlog_20241210_103145.mat');
-% load('MobileSensorData//sensorlog_20241210_103638.mat');
-% load('MobileSensorData//sensorlog_20241210_105253.mat');
-% load('MobileSensorData//sensorlog_20241210_125821.mat');
-load('MobileSensorData//sensorlog_20241210_142011.mat');
-
+% Test data
 % load("Train_data\ActivityLogs.mat")
 % Acceleration = unknownAcceleration;
 
 
 if exist("Position","var") == 1
     if  size(Position,1) > 2
-        Map_plot
+        Map_plot;
     end
 end
 
-% Load model and make predictions
+% Load model, make predictions and plots
 
-Predictor
+Predictor;
 

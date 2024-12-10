@@ -3,7 +3,6 @@
 clear;
 load("Train_data\ActivityLogs.mat")
 
-% g= 9.801;
 
 % Compute statistics for each axis and total acceleration for 'run'
 Acceleration = runAcceleration;
@@ -28,8 +27,6 @@ sit_Data = [sit_Total_acc];
 
 % Combine all activities into a single dataset
 train = [run_Data; walk_Data; sit_Data];
-
-% train = train(:,end-size(sit_Total_acc,2)+1:end );
 
 
 % Create corresponding labels
