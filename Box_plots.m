@@ -51,7 +51,7 @@ ylabel('Accelaration m/s^2')
 total_sit = sqrt(Acceleration.X.^2 +  Acceleration.Y.^2 + Acceleration.Z.^2); 
 
 % Combine all the data into one column
-all_data = [total_run; total_walk; total_sit]-9.80665;
+all_data = [total_run; total_walk; total_sit];
 
 % Create a grouping variable indicating the group each value belongs to
 group = [repmat({'Run'}, length(total_run), 1); 
@@ -62,7 +62,7 @@ group = [repmat({'Run'}, length(total_run), 1);
 figure;
 boxplot(all_data, group);
 xlabel('Activity');
-ylabel('Values');
+ylabel('Accelaration m/s^2');
 title('Comparison of Activities');
 
 
