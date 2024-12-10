@@ -15,7 +15,7 @@ function stats = computeMovingStats(vector, windowSize)
     % Validate inputs
     arguments
         vector (:,1) 
-            windowSize (1,1) = 30
+            windowSize (1,1) = 60
     end
     if ~isvector(vector)
         error('Input must be a 1D vector.');

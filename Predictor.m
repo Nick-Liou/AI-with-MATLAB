@@ -7,9 +7,9 @@
 
 % load('MobileSensorData//sensorlog_20241210_103145.mat');
 % load('MobileSensorData//sensorlog_20241210_103638.mat');
-% load('MobileSensorData//sensorlog_20241210_105253.mat');
+load('MobileSensorData//sensorlog_20241210_105253.mat');
 
-Acceleration = unknownAcceleration;
+% Acceleration = unknownAcceleration;
 
 
 % Acceleration = runAcceleration;
@@ -29,6 +29,9 @@ input_Data = [computeMovingStats(Acceleration.X), ...
             computeMovingStats(Acceleration.Y), ...
             computeMovingStats(Acceleration.Z), ...
             computeMovingStats(Total_acc)];
+
+
+input_Data = [        computeMovingStats(Total_acc)];
 
 preditions = trainedModel.predictFcn(input_Data);
 

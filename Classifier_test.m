@@ -46,6 +46,8 @@ sit_Data = [sit_X_acc, sit_Y_acc, sit_Z_acc, sit_Total_acc];
 % Combine all activities into a single dataset
 train = [run_Data; walk_Data; sit_Data];
 
+train = train(:,end-size(sit_Total_acc,2)+1:end );
+
 
 % Create corresponding labels
 labels = [repmat("run", size(run_Data, 1), 1); 
