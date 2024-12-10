@@ -1,6 +1,7 @@
 
+% EDAV of the train data
 
-% Boxblots
+% Timeseries plots and Boxblots
 close all;
 load("Train_data\ActivityLogs.mat")
 

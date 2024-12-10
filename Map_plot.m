@@ -1,12 +1,5 @@
 
-% clear; 
-
-% load('ExampleData.mat');
-% load('MobileSensorData//sensorlog_20241210_103145.mat');
-% load('MobileSensorData//sensorlog_20241210_103638.mat');
-load('MobileSensorData//sensorlog_20241210_105253.mat');
-
-
+find_total_distance;
 
 % Extract latitude, longitude, and timestamps
 lat = Position.latitude;        % Latitude
@@ -17,9 +10,10 @@ figure;
 geoplot(lat, lon, '-o', 'LineWidth', 1.5, 'MarkerSize', 5);
 title('GPS Data on Map');
 
+legend(sprintf('Route (%.2f m)', totalDistance))
+
 % Set a base map for better visualization
 geobasemap('streets'); % Options: 'satellite', 'streets', 'topographic', etc.
-
 
 
 

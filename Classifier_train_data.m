@@ -1,9 +1,10 @@
 
-% Classifier
+% Prepare the data for the Classifier
 clear;
 load("Train_data\ActivityLogs.mat")
 
 % g= 9.801;
+
 % Compute statistics for each axis and total acceleration for 'run'
 Acceleration = runAcceleration;
 run_Total_acc = computeMovingStats(sqrt(Acceleration.X.^2 + Acceleration.Y.^2 + Acceleration.Z.^2));
