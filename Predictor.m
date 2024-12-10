@@ -2,42 +2,32 @@
 
 % Predictions
 
+% load model
+load("trainedModel.mat")
+
 % load our data
 
 
 % load('MobileSensorData//sensorlog_20241210_103145.mat');
 % load('MobileSensorData//sensorlog_20241210_103638.mat');
-load('MobileSensorData//sensorlog_20241210_105253.mat');
+% load('MobileSensorData//sensorlog_20241210_105253.mat');
+% load('MobileSensorData//sensorlog_20241210_125821.mat');
 
-% Acceleration = unknownAcceleration;
 
 
+load("Train_data\ActivityLogs.mat")
+Acceleration = unknownAcceleration;
 % Acceleration = runAcceleration;
 % Acceleration = walkAcceleration;
 % Acceleration = sitAcceleration;
 
-Acceleration.X = Acceleration.X / g;
-Acceleration.Y = Acceleration.Y / g;
-Acceleration.Z = Acceleration.Z / g;
+Total_acc = sqrt(Acceleration.X.^2 +  Acceleration.Y.^2 + Acceleration.Z.^2) ;
 
-Total_acc = sqrt(Acceleration.X.^2 +  Acceleration.Y.^2 + Acceleration.Z.^2);
-
-% input_Data = [Acceleration.X, Acceleration.Y, Acceleration.Z, Total_acc];
-
-
-input_Data = [computeMovingStats(Acceleration.X), ...
-            computeMovingStats(Acceleration.Y), ...
-            computeMovingStats(Acceleration.Z), ...
-            computeMovingStats(Total_acc)];
-
-
-input_Data = [        computeMovingStats(Total_acc)];
+input_Data = [computeMovingStats(Total_acc)];
 
 preditions = trainedModel.predictFcn(input_Data);
 
-
-
-
+ 
 % time = timeElapsed(Acceleration.Timestamp);
 time = Acceleration.Timestamp;
 categories_categorical = categorical(preditions);
@@ -51,5 +41,5 @@ title('Time vs. Categorical Data');
 grid on;
 hold on;
 plot(Acceleration.Timestamp , sqrt(Acceleration.X.^2 +  Acceleration.Y.^2 + Acceleration.Z.^2))
-legend("X","Y","Z","Total","Location","best")
+
 

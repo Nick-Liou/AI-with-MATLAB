@@ -76,11 +76,7 @@ plot(Acceleration.Timestamp , sqrt(Acceleration.X.^2 +  Acceleration.Y.^2 + Acce
 legend("X","Y","Z","Total","Location","best")
 title("Unknown Accelaration")
 ylabel('Accelaration m/s^2')
-% 
-% total_unknown = sqrt(Acceleration.X.^2 +  Acceleration.Y.^2 + Acceleration.Z.^2);
-% 
-% figure;
-% boxplot(total_unknown);
+
 
 
 

@@ -7,14 +7,14 @@ function stats = computeMovingStats(vector, windowSize)
     %   - windowSize: Window size for moving calculations
     %
     % Output:
-    %   - stats: Struct containing the moving statistics
+    %   - stats: Matrix containing the moving statistics
     %
     % Usage:
     %   stats = computeMovingStats(vector, windowSize);
 
     % Validate inputs
     arguments
-        vector (:,1) 
+            vector (:,1) 
             windowSize (1,1) = 60
     end
     if ~isvector(vector)
@@ -36,11 +36,5 @@ function stats = computeMovingStats(vector, windowSize)
     movingMad       = movmad(vector, windowSize);
 
     stats = [ movingAverage ,movingMedian  , movingStd    , movingMax    , movingMin ,movingMad    ];
-    % % Display a summary of the computed statistics
-    % fprintf('Computed moving statistics with window size %d:\n', windowSize);
-    % fprintf(' - Moving Average: First 5 elements: %s\n', mat2str(stats.movingAverage(1:min(5, end))));
-    % fprintf(' - Moving Median: First 5 elements: %s\n', mat2str(stats.movingMedian(1:min(5, end))));
-    % fprintf(' - Moving Std: First 5 elements: %s\n', mat2str(stats.movingStd(1:min(5, end))));
-    % fprintf(' - Moving Max: First 5 elements: %s\n', mat2str(stats.movingMax(1:min(5, end))));
-    % fprintf(' - Moving Min: First 5 elements: %s\n', mat2str(stats.movingMin(1:min(5, end))));
+
 end
