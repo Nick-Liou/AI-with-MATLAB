@@ -5,9 +5,9 @@ close all ;
 % load data measured at 10Hz (for the accelerometer)
 
 % Route 1 
-load('MobileSensorData//sensorlog_20241210_103145.mat');
+load('MobileSensorData\sensorlog_20241210_103145.mat');
 
-% Test data
+% Test data provided
 % load("Train_data\ActivityLogs.mat")
 % Acceleration = unknownAcceleration;
 
@@ -18,7 +18,7 @@ if exist("Position","var") == 1
     end
 end
 
-% Load model, make predictions and plots
+% Run the script that loads the model, makes predictions and plots
 
 Predictor;
 
