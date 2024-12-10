@@ -4,13 +4,10 @@ close all ;
 % Load data 
 
 
+% Route 1 
+load('MobileSensorData//sensorlog_20241210_103145.mat');
 
-% load('MobileSensorData//sensorlog_20241210_103145.mat');
-% load('MobileSensorData//sensorlog_20241210_103638.mat');
-% load('MobileSensorData//sensorlog_20241210_105253.mat');
-% load('MobileSensorData//sensorlog_20241210_125821.mat');
-load('MobileSensorData//sensorlog_20241210_142011.mat');
-
+% Test data
 % load("Train_data\ActivityLogs.mat")
 % Acceleration = unknownAcceleration;
 
